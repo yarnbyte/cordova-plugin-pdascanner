@@ -4,11 +4,11 @@ PDA手持终端获取扫码数据的cordova插件
 
 ## 安装(Installation)
 
-`cordova plugin add cordova-plugin-pdascanner`
+```cordova plugin add cordova-plugin-pdascanner```
 
 如果是ionic项目则在cordova前加上ionic
 
-`ionic cordova plugin add cordova-plugin-pdascanner`
+```ionic cordova plugin add cordova-plugin-pdascanner```
 
 ## 用法(Usage)
 
@@ -23,7 +23,7 @@ function getQRData(data){
 ```
 
 ### ionic3+
-`npm i ionic-pdascanner`
+```npm i ionic-pdascanner```
 
 添加至module.ts(Add to your app's module)
 ```
