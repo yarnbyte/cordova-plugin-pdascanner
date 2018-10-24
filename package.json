@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-pdascanner",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Android PDA Device Scanner cordova plugin，PDA手持终端扫码插件",
   "main": "index.js",
   "scripts": {

@@ -8,6 +8,7 @@ import android.device.ScanManager;
 import android.device.scanner.configuration.PropertyID;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.util.Log;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -24,6 +25,10 @@ import org.json.JSONObject;
 public class PDAScanner extends CordovaPlugin {
 
     //只有一行注释，就是这么霸气
+
+    //算了，怂了，不写自己也看不懂
+
+    //我也不知道自己写了什么，但就是好使了
 
     private String LOG_TAG = getClass().getName();
 
@@ -64,7 +69,9 @@ public class PDAScanner extends CordovaPlugin {
                 this.receiver = new BroadcastReceiver() {
                     @Override
                     public void onReceive(Context context, Intent intent) {
+                        //嘀
                         soundpool.play(soundid, 1, 1, 0, 0, 1);
+                        //把intent扔给scanDataHandle吧，让它解析
                         scanDataHandle(intent);
                     }
                 };
@@ -90,13 +97,14 @@ public class PDAScanner extends CordovaPlugin {
         // TODO Auto-generated method stub
         mScanManager = new ScanManager();
         mScanManager.openScanner();
-
         mScanManager.switchOutputMode( 0);
         soundpool = new SoundPool(1, AudioManager.STREAM_NOTIFICATION, 100); // MODE_RINGTONE
         soundid = soundpool.load("/etc/Scan_new.ogg", 1);
     }
 
     private  void scanDataHandle(Intent intent){
+        //getQRData负责解析intent中的二维码数据，返回json
+        //json给sendUpdate，让它发送出去给js
         this.sendUpdate(this.getQRData(intent),true);
     }
 
@@ -109,7 +117,7 @@ public class PDAScanner extends CordovaPlugin {
         barcodeStr = new String(barcode, 0, barcodelen);
 
         try {
-            obj.put("code", barcodeStr);
+            obj.put("data", barcodeStr);
         } catch (JSONException e) {
             LOG.e(LOG_TAG, e.getMessage(), e);
         }
@@ -119,6 +127,7 @@ public class PDAScanner extends CordovaPlugin {
 
     private void removeListener(){
         if(this.receiver!=null){
+            this.receiver = null;
             webView.getContext().unregisterReceiver(receiver);
         }
     }
