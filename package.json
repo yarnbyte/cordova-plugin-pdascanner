@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugin-pdascanner",
+  "version": "1.1.0",
+  "description": "Android PDA Device Scanner cordova plugin，PDA手持终端扫码插件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plat10510/cordova-plugin-pdascanner.git"
+  },
+  "keywords": [
+    "pdascanner",
+    "pda",
+    "pdaqrcode",
+    "qrcode",
+    "qrscanner"
+  ],
+  "author": "luoyuanli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plat10510/cordova-plugin-pdascanner/issues"
+  },
+  "homepage": "https://github.com/plat10510/cordova-plugin-pdascanner#readme"
+}

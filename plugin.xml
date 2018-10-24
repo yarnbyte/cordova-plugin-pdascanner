@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-pdascanner" version="1.0.0">
+  <name>PDAScanner</name>
+  <js-module name="PDAScanner" src="www/PDAScanner.js">
+    <clobbers target="cordova.plugins.PDAScanner"/>
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="PDAScanner">
+        <param name="android-package" value="com.yl.pdascanner.PDAScanner"/>
+      </feature>
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml"/>
+    <source-file src="src/android/PDAScanner.java" target-dir="src/com/yl/pdascanner"/>
+    <source-file src="libs/platform_sdk_v2.4.0210.jar" target-dir="libs"/>
+  </platform>
+</plugin>
