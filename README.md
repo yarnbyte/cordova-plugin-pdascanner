@@ -27,7 +27,9 @@ function getQRData(data){
 ```
 
 ### ionic3+
-```npm i ionic-pdascanner```
+```
+npm i ionic-pdascanner
+```
 
 添加至module.ts(Add to your app's module)
 ```
