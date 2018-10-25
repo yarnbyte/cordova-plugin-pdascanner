@@ -5,17 +5,13 @@ PDA手持终端获取扫码数据的cordova插件
 ## 安装(Installation)
 
 ```
-
 cordova plugin add cordova-plugin-pdascanner
-
 ```
 
 如果是ionic项目则在cordova前加上ionic
 
 ```
-
 ionic cordova plugin add cordova-plugin-pdascanner
-
 ```
 
 ## 用法(Usage)
