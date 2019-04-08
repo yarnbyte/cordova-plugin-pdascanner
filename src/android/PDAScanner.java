@@ -24,12 +24,6 @@ import org.json.JSONObject;
  */
 public class PDAScanner extends CordovaPlugin {
 
-    //只有一行注释，就是这么霸气
-
-    //算了，怂了，不写自己也看不懂
-
-    //我也不知道自己写了什么，但就是好使了
-
     private String LOG_TAG = getClass().getName();
 
     private final static String SCAN_ACTION = ScanManager.ACTION_DECODE;
@@ -56,6 +50,7 @@ public class PDAScanner extends CordovaPlugin {
             this.initScan();
             this.pdaCallbackContext = callbackContext;
 
+            
             IntentFilter filter = new IntentFilter();
             int[] idbuf = new int[]{PropertyID.WEDGE_INTENT_ACTION_NAME, PropertyID.WEDGE_INTENT_DATA_STRING_TAG};
             String[] value_buf = mScanManager.getParameterString(idbuf);
